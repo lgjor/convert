@@ -48,6 +48,12 @@ function convertCurrency(amount, price, symbol) {
         // Calculando o valor total da conversão
         let total = amount * price;
         // Formata o valor para o padrão brasileiro e exibe no id result sem o R$
+
+        // Verifica se o resultado é um número
+        if(isNaN(total)){
+            return alert("Por favor, digite o valor corretamente para converter.");
+        }
+
         result.textContent = `${formatCurrencyBRL(total).replace("R$", "")}`;
     } catch (error) {
         console.log(error);
